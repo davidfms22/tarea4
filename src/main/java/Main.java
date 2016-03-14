@@ -17,7 +17,16 @@ public class Main {
 
 		get("/", (request, response) -> {
 			Map<String, Object> attributes = new HashMap<>();
-			attributes.put("message", "Hello World!");
+			attributes.put("A1", "0.0000");
+			attributes.put("A2", "0.0000");
+			attributes.put("A3", "0.0000");
+			attributes.put("A4", "0.0000");
+			attributes.put("A5", "0.0000");
+			attributes.put("B1", "0.0000");
+			attributes.put("B2", "0.0000");
+			attributes.put("B3", "0.0000");
+			attributes.put("B4", "0.0000");
+			attributes.put("B5", "0.0000");
 
 			return new ModelAndView(attributes, "index.ftl");
 		} , new FreeMarkerEngine());
