@@ -7,28 +7,28 @@
 <body>
 	<table class="tg">
 	  <tr>
-	    <th class="tg-rtqs"></th>
-	    <th class="tg-dheh">VS</th>
-	    <th class="tg-dheh">S</th>
-	    <th class="tg-dheh">M</th>
-	    <th class="tg-dheh">L</th>
-	    <th class="tg-dheh">VL</th>
+	    <th class="tg-lwba"></th>
+	    <th class="tg-q9ef">VS</th>
+	    <th class="tg-q9ef">S</th>
+	    <th class="tg-q9ef">M</th>
+	    <th class="tg-q9ef">L</th>
+	    <th class="tg-q9ef">VL</th>
 	  </tr>
 	  <tr>
-	    <td class="tg-9xj4">LOC/Method</td>
-	    <td class="tg-rtqs">A1</td>
-	    <td class="tg-dx8v">A2</td>
-	    <td class="tg-dx8v">A3</td>
-	    <td class="tg-dx8v">A4</td>
-	    <td class="tg-dx8v">A5</td>
+	    <td class="tg-nkhq">LOC/Method</td>
+	    <td class="tg-lwba">A1</td>
+	    <td class="tg-rg0h">A2</td>
+	    <td class="tg-rg0h">A3</td>
+	    <td class="tg-rg0h">A4</td>
+	    <td class="tg-rg0h">A5</td>
 	  </tr>
 	  <tr>
-	    <td class="tg-9xj4">Pgs/Chapter</td>
-	    <td class="tg-dx8v">B1</td>
-	    <td class="tg-dx8v">B2</td>
-	    <td class="tg-dx8v">B3</td>
-	    <td class="tg-dx8v">B4</td>
-	    <td class="tg-f3oy">B5</td>
+	    <td class="tg-nkhq">Pgs/Chapter</td>
+	    <td class="tg-rg0h">B1</td>
+	    <td class="tg-rg0h">B2</td>
+	    <td class="tg-rg0h">B3</td>
+	    <td class="tg-rg0h">B4</td>
+	    <td class="tg-oads">B5</td>
 	  </tr>
 	</table>
 </body>
