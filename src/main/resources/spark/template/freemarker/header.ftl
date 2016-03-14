@@ -1,5 +1,6 @@
 <title>Lab4-DavidMtz</title>
 <style type="text/css">
+	body {background-color:#BDBDBD}
 	.tg  {border-collapse:collapse;border-spacing:0;border-color:#aaa; margin: 0 auto;}
 	.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#aaa;color:#333;background-color:#fff;}
 	.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#aaa;color:#fff;background-color:#f38630;}
