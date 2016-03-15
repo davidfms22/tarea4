@@ -78,10 +78,52 @@ public final class Statistics {
 		return pData;
 	}
 
-	public static double roundDown(double number, int digit) {
+	public static List<Double> roundDown(List<Double> number, int digit) {
+		ArrayList<Double> result = new ArrayList<Double>();
 		int decimal = (int) Math.pow(10, digit);
+		for (int i = 0; i < number.size(); i++) {
+			Double num = Math.rint(number.get(i) * decimal) / decimal;
+			result.add(num);
+		}
+
+		return result;
+	}
+
+	public static List<Double> logaritList(List<Double> data) {
+		ArrayList<Double> result = new ArrayList<Double>();
+		Double log = new Double(0.00);
+		for (int i = 0; i < data.size(); i++) {
+			log = Math.log(data.get(i));
+			result.add(log);
+		}
+		return result;
+	}
+
+	public static Double variance(List<Double> pData) {
+		Double result = new Double(0.00);
+		Double avg = new Double(0.00);
+		Double sum = new Double(0.00);
+		Double n = new Double(0.00);
+		n = (double) pData.size();
+		ArrayList<Double> loglist = (ArrayList<Double>) logaritList(pData);
+		avg = mean(loglist);
 		
-		return Math.rint(number * decimal) / decimal;
+		for (int i = 0; i < n; i++) {
+			loglist.set(i, (loglist.get(i) - avg));
+		}
+		sum = sumatoria(squaring(loglist));
+		result = sum / (n - 1);
+		return result;
+	}
+
+	public static List<Double> antiLogaritList(List<Double> data) {
+		ArrayList<Double> result = new ArrayList<Double>();
+		Double exp = new Double(0.00);
+		for (int i = 0; i < data.size(); i++) {
+			exp = Math.exp(data.get(i));
+			result.add(exp);
+		}
+		return result;
 	}
 
 }
