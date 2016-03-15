@@ -107,7 +107,7 @@ public final class Statistics {
 		n = (double) pData.size();
 		ArrayList<Double> loglist = (ArrayList<Double>) logaritList(pData);
 		avg = mean(loglist);
-		
+
 		for (int i = 0; i < n; i++) {
 			loglist.set(i, (loglist.get(i) - avg));
 		}

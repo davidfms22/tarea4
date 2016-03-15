@@ -1,24 +1,51 @@
-import static spark.Spark.get;
-import static spark.SparkBase.port;
-import static spark.SparkBase.staticFileLocation;
+package dm.uniandes.ASE;
+
+import static org.junit.Assert.assertEquals;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
-import dm.uniandes.ASE.FileFinder;
-import dm.uniandes.ASE.Statistics;
-import spark.ModelAndView;
-import spark.template.freemarker.FreeMarkerEngine;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 
-public class Main {
+/**
+ * Unit test for simple App.
+ */
+public class MainTest {
 
-	public static void main(String[] args) {
+	public ArrayList<Double> answer1;
+	public ArrayList<Double> answer2;
 
-		port(Integer.valueOf(System.getenv("PORT")));
-		staticFileLocation("/public");
+	@Before
+	public void antesDelTest() {
+
+		this.answer1 = new ArrayList<Double>();
+		answer1.add(new Double(4.3953));
+		answer1.add(new Double(8.5081));
+		answer1.add(new Double(16.4696));
+		answer1.add(new Double(31.8811));
+		answer1.add(new Double(61.7137));
+		answer1 = (ArrayList<Double>) Statistics.roundDown(answer1, 3);
+
+		this.answer2 = new ArrayList<Double>();
+		answer2.add(new Double(6.3375));
+		answer2.add(new Double(8.4393));
+		answer2.add(new Double(11.2381));
+		answer2.add(new Double(14.9650));
+		answer2.add(new Double(19.9280));
+		answer2 = (ArrayList<Double>) Statistics.roundDown(answer2, 3);
+
+	}
+
+	@After
+	public void despuesDelTest() {
+
+	}
+
+	@Test
+	public void test1() {
 
 		ArrayList<Double> data1 = new ArrayList<Double>();
 		try {
@@ -41,7 +68,13 @@ public class Main {
 		result1.add(avg1 + dev1);
 		result1.add(avg1 + (2 * dev1));
 		result1 = (ArrayList<Double>) Statistics.antiLogaritList(result1);
-		result1 = (ArrayList<Double>) Statistics.roundDown(result1, 4);
+		result1 = (ArrayList<Double>) Statistics.roundDown(result1, 3);
+
+		assertEquals("Resultado Incorrecto", answer1, result1);
+	}
+
+	@Test
+	public void test2() {
 
 		ArrayList<Double> data2 = new ArrayList<Double>();
 		try {
@@ -64,34 +97,9 @@ public class Main {
 		result2.add(avg2 + dev2);
 		result2.add(avg2 + (2 * dev2));
 		result2 = (ArrayList<Double>) Statistics.antiLogaritList(result2);
-		result2 = (ArrayList<Double>) Statistics.roundDown(result2, 4);
-		String a1 = result1.get(0).toString();
-		String a2 = result1.get(1).toString();
-		String a3 = result1.get(2).toString();
-		String a4 = result1.get(3).toString();
-		String a5 = result1.get(4).toString();
-		String b1 = result2.get(0).toString();
-		String b2 = result2.get(1).toString();
-		String b3 = result2.get(2).toString();
-		String b4 = result2.get(3).toString();
-		String b5 = result2.get(4).toString();
+		result2 = (ArrayList<Double>) Statistics.roundDown(result2, 3);
 
-		get("/", (request, response) -> {
-			Map<String, Object> attributes = new HashMap<>();
-			attributes.put("A1", a1);
-			attributes.put("A2", a2);
-			attributes.put("A3", a3);
-			attributes.put("A4", a4);
-			attributes.put("A5", a5);
-			attributes.put("B1", b1);
-			attributes.put("B2", b2);
-			attributes.put("B3", b3);
-			attributes.put("B4", b4);
-			attributes.put("B5", b5);
-
-			return new ModelAndView(attributes, "index.ftl");
-		} , new FreeMarkerEngine());
-
+		assertEquals("Resultado Incorrecto", answer2, result2);
 	}
 
 }
