@@ -70,6 +70,11 @@ public class Main {
 		String a3 = result1.get(2).toString();
 		String a4 = result1.get(3).toString();
 		String a5 = result1.get(4).toString();
+		String b1 = result2.get(0).toString();
+		String b2 = result2.get(1).toString();
+		String b3 = result2.get(2).toString();
+		String b4 = result2.get(3).toString();
+		String b5 = result2.get(4).toString();
 
 		get("/", (request, response) -> {
 			Map<String, Object> attributes = new HashMap<>();
@@ -78,11 +83,11 @@ public class Main {
 			attributes.put("A3", a3);
 			attributes.put("A4", a4);
 			attributes.put("A5", a5);
-			attributes.put("B1", "0.0000");
-			attributes.put("B2", "0.0000");
-			attributes.put("B3", "0.0000");
-			attributes.put("B4", "0.0000");
-			attributes.put("B5", "0.0000");
+			attributes.put("B1", b1);
+			attributes.put("B2", b2);
+			attributes.put("B3", b3);
+			attributes.put("B4", b4);
+			attributes.put("B5", b5);
 
 			return new ModelAndView(attributes, "index.ftl");
 		} , new FreeMarkerEngine());
